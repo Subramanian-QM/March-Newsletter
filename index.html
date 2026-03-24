@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Quality Edge — March 2026 Edition. Quality, Excellence, ESG & GCC insights by Subramanian Shanmugam.">
+<title>The Quality Edge | March 2026 | Subramanian Shanmugam</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --ink:         #0f0d0a;
+  --off-white:   #f7f3ec;
+  --warm-mid:    #ede6d8;
+  --accent:      #b5421a;
+  --accent-2:    #c9901c;
+  --gold:        #c9901c;
+  --gold-pale:   #f5e8c4;
+  --teal:        #0e4a4a;
+  --navy:        #0d2a4a;
+  --forest:      #163a24;
+  --burgundy:    #4a1010;
+  --rule:        #c8b89a;
+  --muted:       #6e6050;
+  --body-max:    860px;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Libre Baskerville', Georgia, serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #1a1610;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  height: 56px;
+  background: rgba(15,13,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,144,28,0.18);
+  transition: background 0.3s;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: var(--off-white);
+  letter-spacing: 0.01em;
+}
+.nav-brand em { color: var(--accent); font-style: italic; }
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.52);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-issue {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.8;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(160deg, rgba(15,13,10,0.82) 0%, rgba(15,13,10,0.60) 50%, rgba(181,66,26,0.22) 100%),
+    radial-gradient(ellipse at 70% 40%, rgba(201,144,28,0.14) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='800' height='600' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-color: #0f0d0a;
+  background-size: cover;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 80px 40px 72px;
+  position: relative; overflow: hidden;
+}
+
+/* grid lines */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 119px, rgba(201,144,28,0.05) 119px, rgba(201,144,28,0.05) 120px),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,144,28,0.04) 79px, rgba(201,144,28,0.04) 80px);
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px;
+  animation: fadeUp 0.9s ease both;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 112px);
+  font-weight: 700; line-height: 0.95;
+  color: var(--off-white);
+  margin-bottom: 24px;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+.hero-title em { color: var(--accent); font-style: italic; }
+.hero-title .sub-line {
+  display: block; font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 400; font-style: italic; color: rgba(247,243,236,0.65);
+}
+
+.hero-meta {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  margin-bottom: 32px;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+.hero-meta-item {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.46);
+}
+.hero-meta-item span { color: rgba(255,255,255,0.72); }
+.hero-divider { width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
+
+.hero-intro {
+  max-width: 580px;
+  font-family: var(--font-body);
+  font-size: 16.5px; font-style: italic;
+  color: rgba(247,243,236,0.70);
+  line-height: 1.72;
+  border-left: 2px solid var(--accent);
+  padding-left: 18px;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+
+.hero-toc {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 36px;
+  animation: fadeUp 0.9s 0.4s ease both;
+}
+.toc-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.58);
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.toc-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-scroll {
+  position: absolute; bottom: 28px; right: 40px;
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  display: flex; align-items: center; gap: 10px;
+  animation: fadeUp 1s 0.6s ease both;
+}
+.hero-scroll::after {
+  content: '';
+  display: block; width: 1px; height: 44px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.28), transparent);
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ─── MAIN CONTENT ─── */
+.page-body {
+  background: var(--off-white);
+  position: relative;
+}
+
+/* ─── AUTHOR STRIP ─── */
+.author-strip {
+  background: var(--accent);
+  padding: 20px 40px;
+  display: flex; align-items: center; gap: 20px;
+  max-width: 100%;
+}
+.author-av {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.38);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  color: white; flex-shrink: 0;
+}
+.author-info h3 {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 700; color: white;
+}
+.author-info p {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.66);
+}
+
+/* ─── ARTICLE WRAPPER ─── */
+.article {
+  max-width: var(--body-max);
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ─── EDITOR NOTE ─── */
+.ed-note {
+  background: var(--gold-pale);
+  border: 1px solid rgba(201,144,28,0.45);
+  padding: 28px 32px;
+  margin: 48px 0 0;
+  position: relative;
+}
+.ed-note::before {
+  content: '✦';
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--gold-pale); padding: 0 10px;
+  color: var(--gold); font-size: 15px;
+}
+.ed-note-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px;
+}
+.ed-note p {
+  font-size: 15px; line-height: 1.8; color: #3a2e1a;
+}
+.ed-note .sig {
+  margin-top: 12px; font-style: italic; font-size: 13.5px; color: #7a6030;
+}
+
+/* ─── SECTION HEADER ─── */
+.sec {
+  margin: 72px -32px 0;
+  position: relative;
+}
+.sec-banner {
+  padding: 22px 32px 20px;
+  display: flex; align-items: center; gap: 20px;
+}
+.sec-banner.quality    { background: var(--navy); }
+.sec-banner.excellence { background: #2e1a4e; }
+.sec-banner.esg        { background: var(--forest); }
+.sec-banner.regs       { background: #4e2a08; }
+.sec-banner.gcc        { background: #0d3040; }
+.sec-banner.uncertainty{ background: #3a0c0c; }
+.sec-banner.events     { background: var(--ink); }
+
+.sec-icon { font-size: 26px; line-height: 1; flex-shrink: 0; }
+.sec-info { flex: 1; }
+.sec-info .num {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.42); margin-bottom: 3px;
+}
+.sec-info h2 {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; line-height: 1.15; color: white;
+}
+.sec-big-num {
+  font-family: var(--font-display);
+  font-size: 72px; font-weight: 700;
+  color: rgba(255,255,255,0.07); line-height: 1;
+}
+
+/* ─── REGION PILLS ─── */
+.pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.pill {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 2px; font-weight: 500;
+}
+.pill-india  { background: #dce8f7; color: #0d2a4a; }
+.pill-gcc    { background: #d4ecda; color: #163a24; }
+.pill-global { background: #ecdaf0; color: #2e0a40; }
+
+/* ─── TOPIC TAG ─── */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 2px; font-weight: 500;
+}
+.tag-blue   { background: #dce8f7; color: #0d2a4a; }
+.tag-green  { background: #d4ecda; color: #163a24; }
+.tag-purple { background: #ecdaf0; color: #2e0a40; }
+.tag-amber  { background: #f6ead6; color: #5a3808; }
+.tag-red    { background: #f5ddd8; color: #6a1808; }
+.tag-teal   { background: #d0ecec; color: #0a3030; }
+
+/* ─── ARTICLE CARD ─── */
+.a-card {
+  padding: 36px 0;
+  border-bottom: 1px solid #ddd4c0;
+}
+.a-card:last-child { border-bottom: none; }
+.a-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+.a-headline {
+  font-family: var(--font-display);
+  font-size: 26px; font-weight: 700; line-height: 1.25;
+  color: var(--ink); margin-bottom: 14px;
+}
+.a-body { font-size: 15.5px; color: #2a2018; line-height: 1.82; }
+.a-body p + p { margin-top: 12px; }
+
+/* ─── PULL QUOTE ─── */
+.pq {
+  margin: 22px 0;
+  padding: 18px 24px;
+  border-left: 3px solid var(--accent);
+  background: #fdf5ee;
+  font-style: italic; font-size: 17px;
+  color: var(--accent); line-height: 1.62;
+  font-family: var(--font-display);
+}
+
+/* ─── STATS ─── */
+.stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 22px 0 4px;
+}
+.stat { background: #faf6ef; padding: 18px 12px; text-align: center; }
+.stat-n {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 700;
+  color: var(--accent); line-height: 1; margin-bottom: 5px;
+}
+.stat-l {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); line-height: 1.45;
+}
+
+/* ─── CALLOUT ─── */
+.callout {
+  background: #eef3fa; border: 1px solid #c0d4ee;
+  padding: 18px 24px; margin: 18px 0; border-radius: 2px;
+}
+.callout.grn { background: #eaf3ec; border-color: #aed4b8; }
+.callout.amb { background: #faf3e4; border-color: #d4bc88; }
+.callout.red { background: #faf0ee; border-color: #d4a8a0; }
+.callout h4 {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 10px;
+}
+.callout.grn h4 { color: var(--forest); }
+.callout.amb h4 { color: #5a3808; }
+.callout.red h4 { color: #6a1808; }
+.callout ul { list-style: none; font-size: 14px; color: #252018; }
+.callout ul li { padding: 4px 0 4px 20px; position: relative; line-height: 1.6; }
+.callout ul li::before { content: '→'; position: absolute; left: 0; font-size: 12px; color: var(--navy); }
+.callout.grn ul li::before { color: var(--forest); }
+.callout.amb ul li::before { color: #5a3808; }
+.callout.red ul li::before { color: #6a1808; }
+
+/* ─── QUOTE OF MONTH ─── */
+.qotm {
+  margin: 48px 0;
+  background: var(--ink);
+  padding: 40px 40px 36px;
+  position: relative; overflow: hidden;
+}
+.qotm::before {
+  content: '\201C';
+  position: absolute; top: -10px; left: 24px;
+  font-family: var(--font-display);
+  font-size: 140px; font-weight: 700;
+  color: var(--accent); line-height: 1; opacity: 0.5;
+  pointer-events: none;
+}
+.qotm::after {
+  content: '';
+  position: absolute; bottom: 0; right: 0;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,144,28,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.qotm .qotm-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.qotm blockquote {
+  font-family: var(--font-display);
+  font-size: 22px; font-style: italic; line-height: 1.55;
+  color: var(--off-white); padding-left: 4px; margin-bottom: 18px;
+}
+.qotm cite {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.44); font-style: normal;
+}
+
+/* ─── PRACTITIONER TIP ─── */
+.prac {
+  background: #eef4fb;
+  border-left: 4px solid var(--navy);
+  padding: 24px 28px; margin: 24px 0;
+}
+.prac .prac-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 10px;
+}
+.prac h3 {
+  font-family: var(--font-display);
+  font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--ink);
+}
+.prac p { font-size: 14.5px; line-height: 1.78; color: #202838; }
+
+/* ─── EVENTS ─── */
+.events-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 24px;
+}
+.ev {
+  border: 1px solid #ddd4c0;
+  padding: 18px 20px; background: #faf6ef;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ev:hover { border-color: var(--accent); transform: translateY(-2px); }
+.ev-date {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px;
+}
+.ev-title {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; line-height: 1.3;
+  margin-bottom: 6px; color: var(--ink);
+}
+.ev-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.ev-tag {
+  display: inline-block; margin-top: 8px;
+  font-family: var(--font-mono); font-size: 8.5px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 2px;
+}
+.ev-india  { background: #dce8f7; color: #0d2a4a; }
+.ev-global { background: #ecdaf0; color: #2e0a40; }
+.ev-gcc    { background: #d4ecda; color: #163a24; }
+.ev-esg    { background: #f6ead6; color: #5a3808; }
+
+/* ─── CLOSING NOTE ─── */
+.closing {
+  background: var(--gold-pale);
+  border: 1px solid rgba(201,144,28,0.4);
+  padding: 28px 32px; margin-top: 48px;
+  position: relative;
+}
+.closing::before {
+  content: '✦'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--gold-pale); padding: 0 10px; color: var(--gold); font-size: 15px;
+}
+.closing h3 {
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700; margin-bottom: 12px;
+}
+.closing p { font-size: 15px; line-height: 1.8; color: #3a2e1a; }
+
+/* ─── LINKEDIN CTA ─── */
+.li-cta {
+  background: var(--ink);
+  margin: 0 -32px;
+  padding: 36px 32px;
+  display: flex; align-items: center; gap: 28px;
+  margin-top: 60px;
+}
+.li-logo {
+  width: 56px; height: 56px; border-radius: 10px;
+  background: #0077B5;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 24px; font-weight: 500; color: white;
+  flex-shrink: 0;
+}
+.li-copy { flex: 1; }
+.li-copy h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700; color: white; margin-bottom: 5px;
+}
+.li-copy p { font-size: 14px; color: rgba(255,255,255,0.52); line-height: 1.6; }
+.li-btn {
+  background: #0077B5; color: white; border: none;
+  padding: 12px 28px; cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; display: inline-block; flex-shrink: 0;
+  transition: background 0.2s;
+}
+.li-btn:hover { background: #005f91; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0a0806;
+  padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700; color: var(--gold);
+}
+.footer-brand em { color: var(--accent); font-style: italic; }
+footer p {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.36);
+}
+
+/* ─── ORNAMENT RULE ─── */
+.orn {
+  display: flex; align-items: center; gap: 12px; margin: 8px 0 0;
+}
+.orn::before, .orn::after {
+  content: ''; flex: 1; height: 1px; background: var(--rule);
+}
+.orn span { color: var(--rule); font-size: 13px; }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:680px){
+  .site-nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 72px 24px 60px; }
+  .author-strip { padding: 16px 24px; }
+  .article { padding: 0 20px 60px; }
+  .sec { margin: 56px -20px 0; }
+  .sec-banner { padding: 18px 20px; }
+  .sec-big-num { display: none; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .events-grid { grid-template-columns: 1fr; }
+  .li-cta { flex-direction: column; margin: 48px -20px 0; padding: 28px 20px; }
+  .li-btn { width: 100%; text-align: center; }
+  footer { padding: 24px 24px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="site-nav">
+  <div class="nav-brand">The Quality <em>Edge</em></div>
+  <ul class="nav-links">
+    <li><a href="#quality">Quality</a></li>
+    <li><a href="#excellence">Excellence</a></li>
+    <li><a href="#esg">ESG</a></li>
+    <li><a href="#regulations">Regulations</a></li>
+    <li><a href="#gcc">GCC</a></li>
+    <li><a href="#uncertainty">GCC Risk</a></li>
+    <li><a href="#events">Events</a></li>
+  </ul>
+  <div class="nav-issue">Mar 2026 · Vol 2 · Issue 3</div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-kicker">The Quality Edge &nbsp;·&nbsp; by Subramanian Shanmugam &nbsp;·&nbsp; February – March 2026</div>
+
+  <h1 class="hero-title">
+    The Quality <em>Edge</em>
+    <span class="sub-line">March 2026 Edition</span>
+  </h1>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">Issue <span>Vol. 2 · No. 3</span></div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">Coverage <span>India · GCC · Global</span></div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">Topics <span>Quality · Excellence · ESG · Regulations</span></div>
+  </div>
+
+  <p class="hero-intro">
+    Quality, Excellence, Sustainability, and Governance are no longer parallel tracks — they are converging into a single strategic discipline. This edition captures what that means for professionals in India and the GCC.
+  </p>
+
+  <div class="hero-toc">
+    <a class="toc-pill" href="#quality">🔬 Quality</a>
+    <a class="toc-pill" href="#excellence">🏆 Excellence</a>
+    <a class="toc-pill" href="#esg">🌱 ESG</a>
+    <a class="toc-pill" href="#regulations">📋 Regulations</a>
+    <a class="toc-pill" href="#gcc">🌍 GCC Spotlight</a>
+    <a class="toc-pill" href="#uncertainty">⚠️ GCC Uncertainty</a>
+    <a class="toc-pill" href="#events">📅 Events</a>
+  </div>
+
+  <div class="hero-scroll">Scroll to read</div>
+</section>
+
+<!-- ═══ PAGE BODY ═══ -->
+<div class="page-body">
+
+  <!-- AUTHOR STRIP -->
+  <div class="author-strip">
+    <div class="author-av">SS</div>
+    <div class="author-info">
+      <h3>Subramanian Shanmugam</h3>
+      <p>Founder, The Quality Edge &nbsp;·&nbsp; Quality &amp; ESG Practitioner &nbsp;·&nbsp; LinkedIn Community Newsletter</p>
+    </div>
+  </div>
+
+  <div class="article">
+
+    <!-- EDITOR NOTE -->
+    <div class="ed-note">
+      <div class="ed-note-label">Editor's Perspective</div>
+      <p>The February–March 2026 period has been consequential across every pillar of the quality profession. India is tightening its ESG architecture, the GCC is accelerating from policy ambition to operational delivery, and ISO 9001:2026 signals that quality leadership now carries an explicit cultural and ethical mandate. The central insight: Quality, Excellence, Sustainability, and Governance are no longer parallel tracks — they are converging into a single strategic discipline. This edition is structured to reflect that reality.</p>
+      <p class="sig">— Subramanian Shanmugam, Founder · The Quality Edge · March 23, 2026</p>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 1: QUALITY                    -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="quality">
+      <div class="sec-banner quality">
+        <div class="sec-icon">🔬</div>
+        <div class="sec-info">
+          <div class="num">Section 01</div>
+          <h2>Quality — Systems, Standards &amp; Infrastructure</h2>
+        </div>
+        <div class="sec-big-num">01</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-blue">QCI Reform</span>
+        <span class="pill pill-india">🇮🇳 India</span>
+      </div>
+      <h2 class="a-headline">QCI Launches Next-Generation Quality Infrastructure for Viksit Bharat 2047</h2>
+      <div class="a-body">
+        <p>The Quality Council of India has announced sweeping reforms to strengthen India's quality ecosystem. The flagship initiative is the <strong>Q Mark – Desh ka Haq</strong> — a QR-coded mark of quality for laboratories, hospitals, and MSMEs enabling citizens to verify accreditation credentials instantly, effectively eliminating fake certificates from the system.</p>
+        <p>A single paperless accreditation portal replaces multiple legacy portals. The new <strong>Quality Setu</strong> platform provides ticket-based, time-bound grievance resolution. Fast-track accreditation pathways are being introduced for high-growth sectors including drones and cybersecurity. A <strong>Quality Passport</strong> will enable faster global market access for Indian products and services.</p>
+        <div class="callout">
+          <h4>QCI Infrastructure Reforms — Key Actions 2026</h4>
+          <ul>
+            <li>ZED &amp; Lean certification fees reduced for MSME affordability</li>
+            <li>NABL — 48-hour scope extensions for similar products/methods</li>
+            <li>NABL — self-declaration for authorised signatories, 48-hr approvals</li>
+            <li>NABH MITRA — verified mentors empanelled for smaller town hospitals</li>
+            <li>Single paperless accreditation portal replacing multiple portals</li>
+            <li>Quality Passport for faster global market access for Indian products</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-blue">Testing &amp; Labs</span>
+        <span class="pill pill-india">🇮🇳 India</span>
+      </div>
+      <h2 class="a-headline">India's Vision: Become the Global Testing Capital of the World</h2>
+      <div class="a-body">
+        <p>NABL reforms under QCI's 2026 roadmap target positioning India as the world's preferred testing destination. A model scope for medical testing laboratories will ensure uniformity across accredited scopes. <strong>5,000 laboratory personnel</strong> will be trained in 2026 under technical skilling initiatives to strengthen India's national testing infrastructure.</p>
+        <p>AI-assisted desktop surveillance is being piloted for consistently performing hospitals under NABH, reducing the burden of physical inspections while maintaining rigour. The graded penalty structure introduced under NABH replaces blanket penalties with corrective guidance, marking a shift from punitive to improvement-oriented quality governance.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-purple">ISO 9001:2026</span>
+        <span class="pill pill-global">🌐 Global</span>
+      </div>
+      <h2 class="a-headline">ISO 9001:2026 — Draft Approved, September Publication on Track</h2>
+      <div class="a-body">
+        <p>The Draft International Standard (DIS) for ISO 9001:2026 has been formally approved by ISO member bodies. <strong>Target publication: September 2026</strong>, followed by a three-year transition period. This is an evolution, not a revolution — organisations with mature QMS systems face minimal disruption, while those in early stages gain clearer guidance.</p>
+        <div class="pq">"ISO 9001 is a cornerstone for quality assurance across industries. This revision ensures the standard remains relevant in today's increasingly complex and dynamic business environments." — DNV, Global Management Systems</div>
+        <p>Key changes include mandatory climate change consideration in context analysis (Clause 4), expanded leadership accountability to promote quality culture and ethical behaviour, AI/data analytics incorporated into quality methodology guidance, and clarified risk and opportunity management with broadened awareness requirements.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-n">Sep '26</div><div class="stat-l">Target final publication</div></div>
+          <div class="stat"><div class="stat-n">3 Yrs</div><div class="stat-l">Transition period to 2029</div></div>
+          <div class="stat"><div class="stat-n">1M+</div><div class="stat-l">Certificates globally affected</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE OF MONTH -->
+    <div class="qotm">
+      <div class="qotm-label">Quote of the Month</div>
+      <blockquote>"Quality must become the defining mantra of India's manufacturing and export ecosystem — the cornerstone of India's growth story in the Amrit Kaal."</blockquote>
+      <cite>— Union Minister Piyush Goyal, QCI Reform Launch, February 2026</cite>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 2: EXCELLENCE                 -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="excellence">
+      <div class="sec-banner excellence">
+        <div class="sec-icon">🏆</div>
+        <div class="sec-info">
+          <div class="num">Section 02</div>
+          <h2>Excellence — Culture, Leadership &amp; Industry Movements</h2>
+        </div>
+        <div class="sec-big-num">02</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-purple">MSME Excellence</span>
+        <span class="pill pill-india">🇮🇳 India</span>
+      </div>
+      <h2 class="a-headline">IFQM MSME Symposium 2026 at Anna University Catalyses India's Industry-Led Quality Movement</h2>
+      <div class="a-body">
+        <p>The Indian Foundation for Quality Management (IFQM) held its MSME Symposium on March 20, 2026 at Anna University, Guindy, Chennai — bringing together 250+ CEOs from the MSME sector alongside CPOs, business leaders, and quality ambassadors. Together with Bosch, IFQM convened an exclusive knowledge-sharing session on how quality management shapes the future of Indian manufacturing.</p>
+        <p>The IFQM movement — a Section 8 not-for-profit — continues to build the "Indian Way" of quality: a systemic, industry-led approach designed to catalyse Indian industries toward global competitiveness through quality, innovation, and excellence.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-teal">GCC Excellence</span>
+        <span class="pill pill-gcc">🌍 GCC</span>
+      </div>
+      <h2 class="a-headline">GCC Giga Projects Set Global Benchmark for Operational Excellence at Scale</h2>
+      <div class="a-body">
+        <p>Saudi Arabia's giga projects — NEOM, Red Sea Global, Diriyah, Qiddiya, and ROSHN — collectively valued at over SAR 2 trillion, are redefining operational excellence at national scale. Red Sea Global has transitioned from construction to early operations, with 15 assets live, 100% treated sewage effluent reuse, and 70% operational waste diversion — establishing a new reference point for integrated quality and sustainability management.</p>
+        <p>The ET Edge GCC Summit 2026 recognised GCCs and leaders who have moved beyond operational excellence to demonstrate leadership in innovation, talent development, governance, and measurable business impact — reflecting the broader pivot of GCCs from support hubs to strategic innovation engines.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-purple">Global Excellence Forum</span>
+        <span class="pill pill-global">🌐 Global</span>
+      </div>
+      <h2 class="a-headline">ASQ Celebrates 80 Years: WCQI 2026 Focuses on AI, Quality 4.0, and Future Leadership</h2>
+      <div class="a-body">
+        <p>2026 marks the American Society for Quality's 80th anniversary. Its flagship World Conference on Quality and Improvement (WCQI) — themed <em>"When Purpose and Quality Meet, Magic Happens"</em> — convenes May 17–20 in Orlando, Florida. The conference spotlights Quality 4.0 and Quality 5.0 methodologies, AI-enhanced quality tools, and future-ready leadership development.</p>
+      </div>
+    </div>
+
+    <!-- PRACTITIONER TIP -->
+    <div class="prac">
+      <div class="prac-label">💡 Practitioner Tip of the Month</div>
+      <h3>Preparing Your QMS for ISO 9001:2026 — Start Now, Not Later</h3>
+      <p>Don't wait for the final publication in September 2026. Begin by reviewing your Clause 4 context analysis — add climate-related risks and opportunities as an explicit category. Next, engage your top management on what "promoting quality culture" means in your specific organisational context and how it will be demonstrated — not just stated in a policy. Finally, review your risk register through the lens of AI adoption: if your organisation is introducing AI-based tools, your QMS should already be capturing the quality and reliability considerations. The organisations that use the transition period proactively will be ahead by 2029.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 3: ESG                        -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="esg">
+      <div class="sec-banner esg">
+        <div class="sec-icon">🌱</div>
+        <div class="sec-info">
+          <div class="num">Section 03</div>
+          <h2>ESG &amp; Sustainability — Disclosures, Climate &amp; Green Finance</h2>
+        </div>
+        <div class="sec-big-num">03</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-green">SEBI BRSR</span>
+        <span class="pill pill-india">🇮🇳 India</span>
+      </div>
+      <h2 class="a-headline">India's BRSR 2026: The Year ESG Data Earns the Same Weight as Financial Statements</h2>
+      <div class="a-body">
+        <p>India's market regulator SEBI has entered the pivotal enforcement phase of its BRSR framework. Mandatory third-party verification begins with the Top 500 listed companies in FY2025–26, expanding to the Top 1,000 in FY2026–27. Value chain ESG metrics are now voluntarily reportable, with mandatory assurance following thereafter.</p>
+        <p>The BRSR Core framework is extending into the supply chains of key industries including technology and consumer goods. SEBI's amendments also introduce the <strong>Green Credit Programme</strong> as a leadership indicator under Principle 6, where companies and their top ten value chain partners can earn credits for afforestation and river catchment restoration.</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-n">1,000</div><div class="stat-l">Listed companies under mandatory BRSR</div></div>
+          <div class="stat"><div class="stat-n">FY27</div><div class="stat-l">Value chain assurance mandatory</div></div>
+          <div class="stat"><div class="stat-n">9</div><div class="stat-l">BRSR Core ESG principles</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-green">GCC ESG</span>
+        <span class="pill pill-gcc">🌍 GCC</span>
+      </div>
+      <h2 class="a-headline">GCC's $58 Billion ESG Investment Surge: From Ambition to Measurable Action</h2>
+      <div class="a-body">
+        <p>Environmental investment across the GCC reached a record <strong>$58 billion</strong> between November 2024 and March 2025. KPMG projects over $60 billion in renewable energy investment by end-2026. ESG regulation across all six member states has moved beyond policy frameworks into disclosure mandates with supervisory oversight.</p>
+        <div class="callout grn">
+          <h4>GCC ESG Regulatory Snapshot — All Six States</h4>
+          <ul>
+            <li><strong>UAE:</strong> UAE Climate Law — full GHG compliance deadline 30 May 2026</li>
+            <li><strong>Saudi Arabia:</strong> Tadawul ESG disclosure guidelines for all listed companies</li>
+            <li><strong>Qatar:</strong> QSE sustainability platform — mandatory ESG reporting for listed companies</li>
+            <li><strong>Oman:</strong> Mandatory ESG reporting for listed companies from 2025 onward</li>
+            <li><strong>Bahrain:</strong> CBB-enforced ESG reporting covering Scope 1, 2 &amp; 3 since 2024</li>
+            <li><strong>Kuwait:</strong> Kuwait 2035 Vision embeds ESG into economic diversification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-amber">Global ESG Divergence</span>
+        <span class="pill pill-global">🌐 Global</span>
+      </div>
+      <h2 class="a-headline">India Holds the Line as US Retreats and EU Delays on ESG Reporting</h2>
+      <div class="a-body">
+        <p>Three major regulatory jurisdictions have diverged sharply. The US SEC announced it will no longer defend its climate disclosure rule in court. The EU voted to delay mandatory ESG reporting for smaller companies until 2028. India, by contrast, has maintained regulatory direction under SEBI while offering phased flexibility — making India's structured approach a potential reference point for developing economies seeking to unlock ESG finance.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 4: REGULATIONS                -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="regulations">
+      <div class="sec-banner regs">
+        <div class="sec-icon">📋</div>
+        <div class="sec-info">
+          <div class="num">Section 04</div>
+          <h2>Regulations &amp; Standards — Policy, Compliance &amp; Governance</h2>
+        </div>
+        <div class="sec-big-num">04</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-amber">Procurement Compliance</span>
+        <span class="pill pill-gcc">🌍 GCC</span>
+      </div>
+      <h2 class="a-headline">ISO Certification Now a Commercial Prerequisite Across GCC Government Procurement</h2>
+      <div class="a-body">
+        <p>In Saudi Arabia's procurement-driven economy, ISO certification has become non-negotiable. Government and semi-government tenders on the <strong>Etimad Platform</strong> score certified suppliers higher in technical evaluations — missing certification means leaving contracts on the table. In the UAE, free zone authorities in DMCC and DIFC now require certified suppliers to satisfy both revised ISO 9001 criteria and additional free zone authority requirements during tender evaluations.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-purple">Standards Convergence</span>
+        <span class="pill pill-global">🌐 Global</span>
+      </div>
+      <h2 class="a-headline">A Historic Alignment: ISO 9001, Aerospace IA9100, IATF 16949, and CMMC Converge</h2>
+      <div class="a-body">
+        <p>The 2026–2028 period marks an unprecedented convergence of quality and compliance standards. In aerospace and defence, AS9100 is evolving into <strong>IA9100</strong> — aligning with ISO revisions and incorporating tighter supply-chain and digital assurance practices. IATF 16949 (automotive) is simultaneously being modernised. U.S. defence suppliers are preparing for <strong>CMMC cybersecurity certification</strong>. For quality professionals in India and the GCC supplying into global aerospace, automotive, and defence chains — this period is a readiness test and a strategic opportunity to differentiate through early compliance.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-teal">Climate Regulation</span>
+        <span class="pill pill-gcc">🌍 UAE</span>
+      </div>
+      <h2 class="a-headline">UAE Climate Law Enters Full Force: GHG Compliance Deadline — 30 May 2026</h2>
+      <div class="a-body">
+        <p>The UAE Climate Law requires all UAE entities to measure, report, and progressively reduce greenhouse gas emissions. <strong>Full compliance is required by 30 May 2026.</strong> Quality and operations teams in UAE-registered organisations who have not yet completed their Scope 1 and Scope 2 GHG inventory should treat this as an immediate priority. The UAE Central Bank's parallel Climate-related Financial Risk Management Regulation extends these expectations to supervised financial institutions.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 5: GCC SPOTLIGHT              -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="gcc">
+      <div class="sec-banner gcc">
+        <div class="sec-icon">🌍</div>
+        <div class="sec-info">
+          <div class="num">Section 05 · GCC Spotlight</div>
+          <h2>GCC — Quality, ESG &amp; Excellence in the Gulf</h2>
+        </div>
+        <div class="sec-big-num">05</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-teal">UAE</span>
+      </div>
+      <h2 class="a-headline">UAE: Where ISO 9001, Operation 300bn, and Net Zero 2050 Converge Into One Mandate</h2>
+      <div class="a-body">
+        <p>For businesses operating in ICAD, D3, or any of Dubai's free zones, a Quality Management System is no longer a differentiator — it is a minimum entry requirement. The UAE's Operation 300bn industrial strategy and We the UAE 2031 vision are reshaping what regulators and free zone authorities expect from certified organisations, creating a layered compliance environment that rewards proactive quality investment.</p>
+        <p>The UAE's Net Zero 2050 ambition means quality and sustainability have formally merged in the regulatory calendar. Organisations integrating their QMS and environmental management systems are better positioned to respond to both ISO 9001:2026 and the UAE Climate Law simultaneously — reducing duplication of effort and demonstrating integrated governance maturity.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-green">Saudi Arabia</span>
+      </div>
+      <h2 class="a-headline">Saudi Giga Projects: ESG Benchmarking Reveals a Clear Maturity Stratification</h2>
+      <div class="a-body">
+        <p>A February 2026 ESG maturity assessment of Saudi Arabia's five giga projects reveals distinct performance tiers. Red Sea Global and Diriyah Company rank in the <strong>Advanced range</strong>; NEOM and Qiddiya in the Developing range; and ROSHN as Emerging — based on a 30-point scorecard drawing on publicly disclosed data.</p>
+        <p>Red Sea Global leads with 100% TSE water reuse and 70% operational waste diversion. For quality and ESG professionals in the region, these benchmarks provide a visible performance ladder — and a signal of where procurement and investor expectations are heading for suppliers into the giga project ecosystem.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 6: GCC UNCERTAINTY            -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="uncertainty">
+      <div class="sec-banner uncertainty">
+        <div class="sec-icon">⚠️</div>
+        <div class="sec-info">
+          <div class="num">Section 06 · Special Focus</div>
+          <h2>GCC Uncertainty — Risks &amp; Opportunities for Quality Professionals</h2>
+        </div>
+        <div class="sec-big-num">06</div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-red">Geopolitical Risk</span>
+        <span class="pill pill-gcc">🌍 GCC Region</span>
+      </div>
+      <h2 class="a-headline">Strait of Hormuz Tensions and Oil Price Volatility: What Quality Leaders Need to Know</h2>
+      <div class="a-body">
+        <p>The GCC entered 2026 in a position of notable economic strength — high hydrocarbon revenues, expanding sovereign wealth portfolios, and sustained diversification programmes. But the escalation of regional conflict involving Israel, Iran, and their allies has exposed the limits of that resilience. Heightened security risks and potential disruptions to tanker traffic through the Strait of Hormuz — through which roughly 20 million barrels per day of crude and one-fifth of global LNG transits — have injected significant uncertainty into regional supply chains, shipping costs, and investor confidence.</p>
+        <div class="pq">"For GCC economies, geopolitical shocks are transmitted not only through oil prices, but also through trade routes, shipping costs, food and industrial input chains, and shifts in investor sentiment." — OMFIF, March 2026</div>
+        <p>Oil price forecasts for 2026 range widely. J.P. Morgan Research sees Brent crude averaging around $60/bbl, while ING has revised its forecast upward to $62/bbl citing US–Iran uncertainty. In a tail-risk scenario involving significant Hormuz disruption, Brent could spike well above $100/bbl — a scenario quality and procurement professionals must scenario-plan for.</p>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-amber">Trade Disruption</span>
+        <span class="pill pill-gcc">🌍 GCC</span>
+        <span class="pill pill-india">🇮🇳 India Impact</span>
+      </div>
+      <h2 class="a-headline">US Tariff Reshuffling, Sanctions, and the Fragmentation of GCC Trade Routes</h2>
+      <div class="a-body">
+        <p>Global trade policy is compounding the geopolitical pressure. More than 3,000 new trade and industrial policy measures were introduced globally in 2025 — over three times the annual level a decade ago. For the GCC, this has accelerated the need to broaden trade relationships beyond traditional partners.</p>
+        <p>India is directly in the frame: with thinner reserves and heavy reliance on Middle Eastern crude, India is more vulnerable to a prolonged disruption — with higher energy prices feeding inflation, weakening the rupee, and threatening growth. For quality professionals managing India–GCC supply chains, this creates immediate cost and lead-time volatility that must be factored into risk registers and supplier qualification frameworks.</p>
+        <div class="callout red">
+          <h4>GCC Uncertainty — Impact Radar for Quality &amp; Supply Chain Professionals</h4>
+          <ul>
+            <li><strong>Shipping &amp; logistics:</strong> Rerouting around Hormuz increases lead times and freight costs — update supplier lead time buffers in your QMS</li>
+            <li><strong>Input costs:</strong> Petrochemical feedstock and fertiliser price spikes — review supplier financial health in critical categories</li>
+            <li><strong>ISO certification timelines:</strong> Assessment travel and auditor availability may be impacted in conflict-proximate zones</li>
+            <li><strong>ESG reporting:</strong> Scope 3 emissions may shift significantly as supply routes are redirected — flag in your BRSR/GHG inventory</li>
+            <li><strong>Procurement scoring:</strong> UAE and Saudi tender processes continue — certified suppliers retain competitive advantage even in uncertainty</li>
+            <li><strong>Investor confidence:</strong> ESG-mature organisations in the GCC show more resilience to geopolitical sentiment shocks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-card">
+      <div class="a-meta">
+        <span class="tag tag-green">Opportunity Lens</span>
+        <span class="pill pill-gcc">🌍 GCC</span>
+        <span class="pill pill-global">🌐 Global</span>
+      </div>
+      <h2 class="a-headline">The Silver Lining: Why Uncertainty Accelerates the GCC's Quality &amp; Diversification Agenda</h2>
+      <div class="a-body">
+        <p>History consistently shows that geopolitical and economic pressure accelerates structural reforms — and the GCC is no exception. Trade diversification, supply-chain security, AI deployment, workforce transitions, and fiscal resilience will shape the GCC's economic trajectory in 2026, as the region deepens global integration and builds foundations of long-term, sustainable growth.</p>
+        <p>For quality professionals, this creates a clear opportunity window. Organisations that invest now in ISO certification, integrated QMS-ESG frameworks, and supply chain resilience are better positioned to win in GCC markets as governments tighten procurement standards. Nearly three in four global business leaders now prioritise resilience investments, viewing resilience as a driver of growth rather than a cost. That mindset shift is arriving in the GCC — and quality systems are its operational foundation.</p>
+        <p>The GCC's sovereign wealth buffers, continued giga-project investment momentum, and commitment to Vision 2030/We the UAE 2031 diversification mean the fundamental demand for quality, certification, and ESG-aligned suppliers remains structurally intact — even as the short-term environment is turbulent.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION 7: EVENTS                     -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="sec" id="events">
+      <div class="sec-banner events">
+        <div class="sec-icon">📅</div>
+        <div class="sec-info">
+          <div class="num">Section 07</div>
+          <h2>Upcoming Events — Mark Your Calendar</h2>
+        </div>
+        <div class="sec-big-num">07</div>
+      </div>
+    </div>
+
+    <div class="events-grid" style="padding-top:8px;">
+      <div class="ev">
+        <div class="ev-date">25–26 March 2026</div>
+        <div class="ev-title">5th Sustainability Week Asia</div>
+        <div class="ev-desc">The Athenee Hotel, Bangkok, Thailand. Cross-sector ESG leadership, climate strategy &amp; sustainability reporting.</div>
+        <span class="ev-tag ev-esg">ESG · Asia</span>
+      </div>
+      <div class="ev">
+        <div class="ev-date">6–7 April 2026</div>
+        <div class="ev-title">Sustainable Coastal Development &amp; Ocean Action MENA Forum</div>
+        <div class="ev-desc">Habtoor Grand, Dubai, UAE. 3rd edition — MENA sustainability, coastal development and ocean action.</div>
+        <span class="ev-tag ev-gcc">ESG · GCC</span>
+      </div>
+      <div class="ev">
+        <div class="ev-date">17–20 May 2026</div>
+        <div class="ev-title">ASQ WCQI 2026 — World Conference on Quality &amp; Improvement</div>
+        <div class="ev-desc">Marriott Orlando World Center, USA. ASQ's 80th anniversary flagship. Theme: "When Purpose and Quality Meet, Magic Happens."</div>
+        <span class="ev-tag ev-global">Quality · Global</span>
+      </div>
+      <div class="ev">
+        <div class="ev-date">TBC — Q2 2026</div>
+        <div class="ev-title">NASSCOM GCC Summit 2026</div>
+        <div class="ev-desc">India (Major cities). 750+ speakers, 11,000+ delegates. Quality, innovation, ESG, and next-phase GCC strategy.</div>
+        <span class="ev-tag ev-india">Excellence · India</span>
+      </div>
+      <div class="ev">
+        <div class="ev-date">TBC — April 2026</div>
+        <div class="ev-title">ET Edge GCC Summit 2026</div>
+        <div class="ev-desc">Bengaluru, India. Innovation, talent, ESG strategies, AI adoption, and urban innovation for GCC leaders.</div>
+        <span class="ev-tag ev-india">GCC · India</span>
+      </div>
+      <div class="ev">
+        <div class="ev-date">18 December 2026</div>
+        <div class="ev-title">India Manufacturing Excellence &amp; Sustainability 4.0 Awards</div>
+        <div class="ev-desc">Mumbai, India — Frost &amp; Sullivan. Premier recognition for manufacturing quality and sustainability excellence.</div>
+        <span class="ev-tag ev-india">Excellence · India</span>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <h3>Closing Thought — The Convergence Is Here</h3>
+      <p>Whether you are a quality professional in Coimbatore, a compliance leader in Dubai, or a plant manager in Riyadh — the signal from February–March 2026 is consistent: <strong>Quality, Excellence, ESG, and Governance are converging into one integrated strategic discipline.</strong> ISO 9001:2026 demands quality culture from leadership, not just policy signatures. BRSR demands ESG data rigour on par with financial reporting. The GCC's regulatory calendar is tightening fast. Those who act now — not at the deadline — will lead.</p>
+    </div>
+
+    <!-- LINKEDIN CTA -->
+    <div class="li-cta">
+      <div class="li-logo">in</div>
+      <div class="li-copy">
+        <h3>Found this edition valuable?</h3>
+        <p>Follow <strong>The Quality Edge</strong> on LinkedIn for weekly insights on Quality, Excellence &amp; ESG. Share this with your network — one share could spark a quality conversation that matters.</p>
+      </div>
+      <a class="li-btn" href="https://www.linkedin.com/in/subramanian-shanmugam" target="_blank">Follow on LinkedIn</a>
+    </div>
+
+  </div><!-- /article -->
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">The Quality <em>Edge</em></div>
+  <p>By Subramanian Shanmugam &nbsp;·&nbsp; March 2026 Edition</p>
+  <p>India &nbsp;·&nbsp; GCC &nbsp;·&nbsp; Global &nbsp;·&nbsp; Quality &nbsp;·&nbsp; ESG</p>
+</footer>
+
+<script>
+// Smooth active nav highlight on scroll
+const sections = document.querySelectorAll('.sec');
+const navLinks = document.querySelectorAll('.nav-links a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.querySelector('[id]')?.id ||
+                 entry.target.nextElementSibling?.querySelector('[id]')?.id;
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + id
+          ? 'var(--gold)' : '';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
